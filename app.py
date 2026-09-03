@@ -1046,7 +1046,7 @@ if department_col:
         how="left"
     )
 
-    dependency["العقود "] = (
+    dependency["العقود"] = (
         dependency["العقود"]
         .fillna(0)
     )
