@@ -837,7 +837,7 @@ avg_experience = safe_mean(
 
 
 st.markdown(
-    '<div class="section-title">ع</div>',
+    '<div class="section-title">عقود المتقاعدين</div>',
     unsafe_allow_html=True
 )
 
