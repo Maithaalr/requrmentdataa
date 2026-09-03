@@ -1036,7 +1036,7 @@ if department_col:
     special_by_dept = (
         special_df.groupby(department_col)
         .size()
-        .reset_index(name="العقود ")
+        .reset_index(name="العقود")
     )
 
     dependency = pd.merge(
