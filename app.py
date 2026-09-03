@@ -837,13 +837,13 @@ avg_experience = safe_mean(
 
 
 st.markdown(
-    '<div class="section-title">العقود الخاصة في لمحة</div>',
+    '<div class="section-title">ع</div>',
     unsafe_allow_html=True
 )
 
 st.markdown(
     '<div class="section-subtitle">'
-    'نظرة تنفيذية على حجم العقود الخاصة وخصائصها الرئيسية.'
+    'نظرة تنفيذية على حجم العقود وخصائصها الرئيسية.'
     '</div>',
     unsafe_allow_html=True
 )
@@ -860,7 +860,7 @@ with k1:
 
 with k2:
     kpi_card(
-        "نسبة العقود الخاصة",
+        "نسبة العقود",
         f"{special_percentage:.1f}%",
         "من إجمالي القوى العاملة"
     )
@@ -905,11 +905,11 @@ st.markdown(
     f'<div class="insight-card" dir="rtl">'
     f'<div class="insight-label">أبرز ملاحظة</div>'
     f'<div class="insight-text">'
-    f'تتركز أعلى نسبة من العقود الخاصة في '
+    f'تتركز أعلى نسبة من العقود  في '
     f'<b>{top_department}</b>، '
     f'بعدد <b>{top_count:,}</b> موظف، '
     f'بما يمثل تقريباً <b>{top_percentage:.1f}%</b> '
-    f'من العقود الخاصة ضمن البيانات المعروضة.'
+    f'من العقود ضمن البيانات المعروضة.'
     f'</div>'
     f'</div>',
     unsafe_allow_html=True
@@ -923,14 +923,14 @@ st.markdown(
 
 st.markdown(
     '<div class="section-title">'
-    'أين تتركز العقود الخاصة؟'
+    'أين تتركز العقود؟'
     '</div>',
     unsafe_allow_html=True
 )
 
 st.markdown(
     '<div class="section-subtitle">'
-    'تحليل التوزيع المؤسسي للعقود الخاصة عبر الدوائر والوحدات التنظيمية.'
+    'تحليل التوزيع المؤسسي للعقود عبر الدوائر والوحدات التنظيمية.'
     '</div>',
     unsafe_allow_html=True
 )
@@ -961,7 +961,7 @@ with c1:
             x="عدد العقود",
             y="الدائرة",
             orientation="h",
-            title="العقود الخاصة حسب الدائرة"
+            title="العقود حسب الدائرة"
         )
 
         fig.update_layout(
@@ -1036,7 +1036,7 @@ if department_col:
     special_by_dept = (
         special_df.groupby(department_col)
         .size()
-        .reset_index(name="العقود الخاصة")
+        .reset_index(name="العقود ")
     )
 
     dependency = pd.merge(
@@ -1046,13 +1046,13 @@ if department_col:
         how="left"
     )
 
-    dependency["العقود الخاصة"] = (
-        dependency["العقود الخاصة"]
+    dependency["العقود "] = (
+        dependency["العقود"]
         .fillna(0)
     )
 
     dependency["نسبة الاعتماد"] = (
-        dependency["العقود الخاصة"]
+        dependency["العقود"]
         / dependency["إجمالي الموظفين"]
         * 100
     )
@@ -1067,7 +1067,7 @@ if department_col:
         x="نسبة الاعتماد",
         y=department_col,
         orientation="h",
-        title="نسبة اعتماد كل دائرة على العقود الخاصة",
+        title="نسبة اعتماد كل دائرة على العقود",
         text_auto=".1f"
     )
 
@@ -1092,14 +1092,14 @@ if department_col:
 
 st.markdown(
     '<div class="section-title">'
-    'من هم موظفو العقود الخاصة؟'
+    'من هم موظفو العقود؟'
     '</div>',
     unsafe_allow_html=True
 )
 
 st.markdown(
     '<div class="section-subtitle">'
-    'قراءة ديموغرافية ووظيفية للقوى العاملة بعقود خاصة.'
+    'قراءة ديموغرافية ووظيفية للقوى العاملة بعقود.'
     '</div>',
     unsafe_allow_html=True
 )
@@ -1197,7 +1197,7 @@ if age_col:
         age_df,
         x="العمر",
         nbins=12,
-        title="التوزيع العمري لموظفي العقود الخاصة"
+        title="التوزيع العمري لموظفي العقود"
     )
 
     style_fig(fig)
@@ -1214,7 +1214,7 @@ if age_col:
 
 st.markdown(
     '<div class="section-title">'
-    'في أي وظائف تتركز العقود الخاصة؟'
+    'في أي وظائف تتركز العقود؟'
     '</div>',
     unsafe_allow_html=True
 )
@@ -1299,7 +1299,7 @@ with j2:
 
 st.markdown(
     '<div class="section-title">'
-    'ما مستوى الكفاءات التي تستقطبها العقود الخاصة؟'
+    'ما مستوى الكفاءات التي تستقطبها العقود ؟'
     '</div>',
     unsafe_allow_html=True
 )
@@ -1517,7 +1517,7 @@ if experience_col:
 
 st.markdown(
     '<div class="section-title">'
-    'ما التكلفة الفعلية للعقود الخاصة؟'
+    'ما التكلفة الفعلية للعقود ؟'
     '</div>',
     unsafe_allow_html=True
 )
@@ -1572,7 +1572,7 @@ if department_col:
         x="التكلفة الشهرية التقديرية",
         y=department_col,
         orientation="h",
-        title="التكلفة الشهرية للعقود الخاصة حسب الدائرة"
+        title="التكلفة الشهرية للعقود حسب الدائرة"
     )
 
     fig.update_layout(
@@ -1686,7 +1686,7 @@ if service_col:
 
         st.markdown(
             '<div class="section-title">'
-            'منذ متى تستمر العقود الخاصة؟'
+            'منذ متى تستمر العقود ؟'
             '</div>',
             unsafe_allow_html=True
         )
@@ -1695,7 +1695,7 @@ if service_col:
             service_data,
             x="مدة الخدمة",
             y="العدد",
-            title="توزيع العقود الخاصة حسب مدة الخدمة"
+            title="توزيع العقود حسب مدة الخدمة"
         )
 
         style_fig(fig)
@@ -1721,9 +1721,9 @@ st.markdown(
     f'<div class="insight-card" dir="rtl">'
     f'<div class="insight-label">استمرارية العقود</div>'
     f'<div class="insight-text">'
-    f'يوجد <b>{long_tenure:,}</b> موظفاً بعقد خاص تجاوزت مدة خدمتهم '
+    f'يوجد <b>{long_tenure:,}</b> موظفاً بعقد تجاوزت مدة خدمتهم '
     f'<b>10 سنوات</b>، بما يمثل <b>{long_pct:.1f}%</b> '
-    f'من العقود الخاصة المعروضة. '
+    f'من العقود المعروضة. '
     f'قد تمثل هذه الفئة مجالاً مناسباً للمراجعة لفهم طبيعة الاحتياج طويل الأمد.'
     f'</div>'
     f'</div>',
